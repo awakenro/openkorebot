@@ -1,0 +1,9 @@
+[NoobRO]
+ip 66.150.188.148
+port 6900
+master_version 0
+private 1
+version 50
+addTableFolders RO2
+charBlockSize 147
+serverType kRO_RagexeRE_2017_01_25a

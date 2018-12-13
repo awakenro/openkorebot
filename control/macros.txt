@@ -1,0 +1,31 @@
+automacro kill3 {
+	exclusive 1
+	map guild_vs3
+	player /(.*)/i
+	call {
+		$player = @player ($.lastMatch1)
+		do sp 89 $player
+		pause 3
+		do sp 85 $player
+		pause 3
+	}
+}
+
+automacro kill {
+	exclusive 1
+	map morocc
+	call {
+		do move 163 88
+		pause 3
+		do talknpc 168 86 c r0
+		pause 3
+	}
+}
+
+automacro TerimaPM {
+   console /Disconnecting/.
+   run-once 1
+   call {
+		do relog
+	}
+}

@@ -15,9 +15,4 @@
 # When someone says something that contains the word "bot" or "botter",
 # Kore will reply with "no", "I'm not a bot" or "huh?".
 
-hi,hello,sup,bruh,bro	hi,hello,sup,bruh,bro,huh?
-Apa yang dia lakukan dengan sekop?	Dia menghapus rumput dan duri dengan sekop.
-Dia menghapus rumput dan duri dengan sekop.	Dia di sana memberikan arah kepada siswa. 
-Kapan hari olahraga kita?	Hari olahraga adalah pada hari Sabtu tanggal 23 bulan ini.
-Siapa yang memimpin fungsi hari olahraga?	DEO kami memimpin fungsi.
-Apakah Anda mengambil bagian dalam setiap item?	Aku mengambil bagian dalam lompat jauh.
+bot,botter	no,I'm not a bot,huh?

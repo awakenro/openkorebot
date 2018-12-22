@@ -5,10 +5,17 @@ automacro part1{
 	sp > 5%
 	call {
 		$player = @player ($.lastMatch1)
-		do sp 19 $player
-		do sp 89 $player
-		do sp 19 $player
-		do sp 89 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do sp 397 $player
+		do kill $player
 	}
 }
 
@@ -43,19 +50,23 @@ automacro part4{
 	run-once 1
 	map Alyssandra
 	call {
-		do move 87 90
-		do chat create "AFK" 2 1 0
+		do move 79 96
+		do chat create "porn :P" 2 1 0
 		do sit
-		pause 200
+		pause 250
 		do chat leave
 		pause 3
-		do move 116 44
+		do move 85 91
+		do e no1
 		pause 20
-		do move 91 92
+		do move 97 88
 		do e heh
-		pause 5000
-		do move 100 95
-		do chat create "afk" 2 1 0
+		pause 60
+		do move 139 93
+		pause 500
+		do move 81 89
+		do chat create "pornhub.com" 2 1 0
+		do sit
 		pause 7200
 		do reload mac
 	}

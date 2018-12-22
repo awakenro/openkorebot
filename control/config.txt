@@ -5,7 +5,7 @@
 
 master Awaken Ragnarok Online
 server 0
-username gwiz
+username gknight
 password qweasdzxc
 loginPinCode
 char 1
@@ -36,7 +36,7 @@ XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword gijiboza
+adminPassword jecochal
 callSign
 commandPrefix ;
 callSignGM 0
@@ -529,17 +529,17 @@ doCommand {
 	manualAI 0
 }
 
-useSelf_skill Sight {
-	lvl 10
+useSelf_skill Concentration {
+	lvl 5
 	sp > 5%
-	whenStatusInactive Sight
+	whenStatusInactive Concentration
 	inMap guild_vs3
 }
 
-useSelf_skill HW_MAGICPOWER {
-	lvl 10
+useSelf_skill Aura Blade {
+	lvl 5
 	sp > 5%
-	timeout 30
+	whenStatusInactive Aura Blade
 	inMap guild_vs3
 }
 useSelf_skill_smartHeal 1

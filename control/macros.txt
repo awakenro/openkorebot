@@ -33,7 +33,6 @@ automacro part2{
 		pause 3
 		do talknpc 92 95 c r0
 		do move 50 50
-		do reload mac
 	}	
 }
 
@@ -68,6 +67,14 @@ automacro part4{
 		do chat create "pornhub.com" 2 1 0
 		do sit
 		pause 7200
+		do reload mac
+	}
+}
+
+automacro part5{
+	run-once 1
+	console /You are now: Dead/
+	call {
 		do reload mac
 	}
 }

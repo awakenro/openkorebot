@@ -7,13 +7,13 @@ automacro part1{
 		$player = @player ($.lastMatch1)
 		do sp 19 $player
 		do sp 89 $player
-		do kill $player
 		do sp 19 $player
 		do sp 89 $player
 	}
 }
 
 automacro part2{
+	exclusive 1
 	run-once 1
 	console /~~~/
 	call {
@@ -36,5 +36,27 @@ automacro part3{
 	sp < 5%
 	call {
 		do relog	
+	}
+}
+
+automacro part4{
+	run-once 1
+	map Alyssandra
+	call {
+		do move 87 90
+		do chat create "AFK" 2 1 0
+		do sit
+		pause 200
+		do chat leave
+		pause 3
+		do move 116 44
+		pause 20
+		do move 91 92
+		do e heh
+		pause 5000
+		do move 100 95
+		do chat create "afk" 2 1 0
+		pause 7200
+		do reload mac
 	}
 }

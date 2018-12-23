@@ -5,7 +5,7 @@
 
 master Awaken Ragnarok Online
 server 0
-username gknight
+username gsmith
 password qweasdzxc
 loginPinCode
 char 1
@@ -36,7 +36,7 @@ XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword jecochal
+adminPassword wewetrou
 callSign
 commandPrefix ;
 callSignGM 0
@@ -98,10 +98,22 @@ attackEquip_shoes
 attackEquip_arrow
 
 #You need the breakTime plugin: http://wiki.openkore.com/index.php?title=BreakTime
-autoBreakTime {
-	startTime
-	stopTime
+
+autoBreakTime all {
+	startTime 24:00
+	stopTime 06:00
 }
+
+autoBreakTime all {
+	startTime 10:00
+	stopTime 11:00
+}
+
+autoBreakTime all {
+	startTime 13:00
+	stopTime 14:00
+}
+
 
 autoConfChange {
 	minTime
@@ -185,7 +197,7 @@ itemsTakeAuto_new 0
 itemsTakeGreed 0
 itemsCheckWeight 1
 
-lockMap 0
+lockMap guild_vs3
 lockMap_x
 lockMap_y
 lockMap_randX
@@ -529,19 +541,40 @@ doCommand {
 	manualAI 0
 }
 
-useSelf_skill Concentration {
-	lvl 5
+useSelf_skill Meltdown {
+	lvl 10
 	sp > 5%
-	whenStatusInactive Concentration
+	whenStatusInactive Shattering Strike
 	inMap guild_vs3
 }
 
-useSelf_skill Aura Blade {
+useSelf_skill Maximize Power {
 	lvl 5
 	sp > 5%
-	whenStatusInactive Aura Blade
+	whenStatusInactive Maximize Power
 	inMap guild_vs3
 }
+
+useSelf_skill Power Thurst {
+	lvl 5
+	sp > 5%
+	whenStatusInactive Power Thurst
+	inMap guild_vs3
+}
+useSelf_skill Weapon Perfection {
+	lvl 5
+	sp > 5%
+	whenStatusInactive Weapon Perfection
+	inMap guild_vs3
+}
+
+useSelf_skill Adrenaline Rush {
+	lvl 5
+	sp > 5%
+	whenStatusInactive Adrenaline Rush
+	inMap guild_vs3
+}
+
 useSelf_skill_smartHeal 1
 
 partySkillDistance 0..8

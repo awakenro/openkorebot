@@ -5,7 +5,7 @@
 
 master Awaken Ragnarok Online
 server 0
-username gsmith
+username gassasin
 password qweasdzxc
 loginPinCode
 char 1
@@ -36,7 +36,7 @@ XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword wewetrou
+adminPassword thieseeh
 callSign
 commandPrefix ;
 callSignGM 0
@@ -197,7 +197,7 @@ itemsTakeAuto_new 0
 itemsTakeGreed 0
 itemsCheckWeight 1
 
-lockMap guild_vs3
+lockMap
 lockMap_x
 lockMap_y
 lockMap_randX
@@ -539,40 +539,6 @@ doCommand {
 	inCart
 	inMap
 	manualAI 0
-}
-
-useSelf_skill Meltdown {
-	lvl 10
-	sp > 5%
-	whenStatusInactive Shattering Strike
-	inMap guild_vs3
-}
-
-useSelf_skill Maximize Power {
-	lvl 5
-	sp > 5%
-	whenStatusInactive Maximize Power
-	inMap guild_vs3
-}
-
-useSelf_skill Power Thurst {
-	lvl 5
-	sp > 5%
-	whenStatusInactive Power Thurst
-	inMap guild_vs3
-}
-useSelf_skill Weapon Perfection {
-	lvl 5
-	sp > 5%
-	whenStatusInactive Weapon Perfection
-	inMap guild_vs3
-}
-
-useSelf_skill Adrenaline Rush {
-	lvl 5
-	sp > 5%
-	whenStatusInactive Adrenaline Rush
-	inMap guild_vs3
 }
 
 useSelf_skill_smartHeal 1

@@ -5,7 +5,8 @@ automacro part1{
 	sp > 5%
 	call {
 		$player = @player ($.lastMatch1)
-		do kill $player
+		do sp 135
+		do sp 379 $player
 		do move 50 50
 		do reload mac
 	}
@@ -14,7 +15,7 @@ automacro part1{
 automacro part2{
 	exclusive 1
 	run-once 1
-	console /~~~/
+	console /~~~/i
 	call {
 		pause 3
 		do c @go 1
@@ -64,7 +65,7 @@ automacro part4{
 
 automacro part5{
 	run-once 1
-	console /You are now: Dead/
+	console /You are now: Dead/i
 	call {
 		do reload mac
 	}

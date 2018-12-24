@@ -5,7 +5,6 @@ automacro part1{
 	sp > 5%
 	call {
 		$player = @player ($.lastMatch1)
-		do sp 135
 		do sp 379 $player
 		do move 50 50
 		do reload mac

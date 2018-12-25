@@ -41,38 +41,9 @@ automacro part4{
 	run-once 1
 	map Alyssandra
 	call {
-		do move 85 95
-		pause 5
+		do move 85 93
 		do talknpc 82 95
-		do move 92 92
-		pause 3
-		do move 112 73
-		pause 1
-		do move 66 75
-		pause 3
-		do move 86 91
-		do @go 1
-		pause 1
-		do @go main
-		pause 3
-		do talknpc 82 95
-		pause 3
-		do move 84 91
-		do sit
-		pause 250
-		do move 65 38
-		do e no1
-		pause 20
-		do move 111 40
-		do e heh
-		pause 60
-		do move 93 87
-		pause 100
-		do move 87 92
-		do sit
-		pause 500
-		do move 81 89
-		pause 7200
+		do @warp novice
 		do reload mac
 	}
 }

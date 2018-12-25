@@ -5,8 +5,8 @@
 
 master Awaken Ragnarok Online
 server 0
-username gassasin
-password qweasdzxc
+username joy33
+password fupo
 loginPinCode
 char 1
 
@@ -99,22 +99,6 @@ attackEquip_arrow
 
 #You need the breakTime plugin: http://wiki.openkore.com/index.php?title=BreakTime
 
-autoBreakTime all {
-	startTime 24:00
-	stopTime 06:00
-}
-
-autoBreakTime all {
-	startTime 10:00
-	stopTime 11:00
-}
-
-autoBreakTime all {
-	startTime 13:00
-	stopTime 14:00
-}
-
-
 autoConfChange {
 	minTime
 	varTime
@@ -197,7 +181,7 @@ itemsTakeAuto_new 0
 itemsTakeGreed 0
 itemsCheckWeight 1
 
-lockMap
+lockMap novice
 lockMap_x
 lockMap_y
 lockMap_randX

@@ -99,6 +99,11 @@ attackEquip_arrow
 
 #You need the breakTime plugin: http://wiki.openkore.com/index.php?title=BreakTime
 
+autoBreakTime all {
+	startTime 23:30
+	stopTime 18:00
+}
+
 autoConfChange {
 	minTime
 	varTime

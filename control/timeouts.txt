@@ -42,7 +42,7 @@ ai_attack_giveup 12
 # If you've just killed a monster, and there are no aggressives,
 # and you're not picking up any items, wait x seconds before doing
 # anything else.
-ai_attack_waitAfterKill 0.7
+ai_attack_waitAfterKill 0.1
 ai_attack_unstuck 2.75
 ai_attack_unfail 5
 

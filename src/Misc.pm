@@ -791,6 +791,7 @@ sub checkWallLength {
 # Checks whether an object is inside someone else's spell area.
 # (Traps are also "area spells").
 sub objectInsideSpell {
+	return 0 if ($config{'rabidDog'} || $config{'killSteal'});
 	my $object = shift;
 	my $ignore_party_members = shift;
 	$ignore_party_members = 1 if (!defined $ignore_party_members);
@@ -830,6 +831,7 @@ sub objectIsMovingTowards {
 #
 # Check whether an object is moving towards a player.
 sub objectIsMovingTowardsPlayer {
+	return 0 if ($config{'rabidDog'} || $config{'killSteal'});	
 	my $obj = shift;
 	my $ignore_party_members = shift;
 	$ignore_party_members = 1 if (!defined $ignore_party_members);
@@ -1486,9 +1488,103 @@ sub checkFollowMode {
 # Requires: $ID is a valid monster ID.
 #
 # Checks whether a monster is "clean" (not being attacked by anyone).
-sub checkMonsterCleanness { 
-	return 1
-} 
+sub checkMonsterCleanness {
+	return 1 if ($config{'rabidDog'} || $config{'killSteal'});
+	return 1 if (!$config{attackAuto});
+	my $ID = $_[0];
+	return 1 if $playersList->getByID($ID) || $slavesList->getByID($ID);
+	my $monster = $monstersList->getByID($ID);
+
+	# If party attacked monster, or if monster attacked/missed party
+	if ($config{attackAuto_party} && ($monster->{dmgFromParty} > 0 || $monster->{missedFromParty} > 0 || $monster->{dmgToParty} > 0 || $monster->{missedToParty} > 0)) {
+		return 1;
+	}
+
+	if ($config{aggressiveAntiKS}) {
+		# Aggressive anti-KS mode, for people who are paranoid about not kill stealing.
+
+		# If we attacked the monster first, do not drop it, we are being KSed
+		return 1 if ($monster->{dmgFromYou} || $monster->{missedFromYou});
+		
+		# If others attacked the monster then always drop it, wether it attacked us or not!
+		return 0 if (($monster->{dmgFromPlayer} && %{$monster->{dmgFromPlayer}})
+			  || ($monster->{missedFromPlayer} && %{$monster->{missedFromPlayer}})
+			  || (($monster->{castOnByPlayer}) && %{$monster->{castOnByPlayer}})
+			  || (($monster->{castOnToPlayer}) && %{$monster->{castOnToPlayer}}));
+	}
+	
+	# If monster attacked/missed you
+	return 1 if ($monster->{'dmgToYou'} || $monster->{'missedYou'});
+
+	# If we're in follow mode
+	if (defined(my $followIndex = AI::findAction("follow"))) {
+		my $following = AI::args($followIndex)->{following};
+		my $followID = AI::args($followIndex)->{ID};
+
+		if ($following) {
+			# And master attacked monster, or the monster attacked/missed master
+			if ($monster->{dmgToPlayer}{$followID} > 0
+			 || $monster->{missedToPlayer}{$followID} > 0
+			 || $monster->{dmgFromPlayer}{$followID} > 0) {
+				return 1;
+			}
+		}
+	}
+
+	if (objectInsideSpell($monster)) {
+		# Prohibit attacking this monster in the future
+		$monster->{dmgFromPlayer}{$char->{ID}} = 1;
+		return 0;
+	}
+
+	#check party casting on mob
+	my $allowed = 1; 
+	if (scalar(keys %{$monster->{castOnByPlayer}}) > 0) 
+	{ 
+		foreach (keys %{$monster->{castOnByPlayer}}) 
+		{ 
+			my $ID1=$_; 
+			my $source = Actor::get($_); 
+			unless ( existsInList($config{tankersList}, $source->{name}) || 
+				($char->{party}{joined} && $char->{party}{users}{$ID1} && %{$char->{party}{users}{$ID1}})) 
+			{ 
+				$allowed = 0; 
+				last; 
+			} 
+		} 
+	} 
+
+	# If monster hasn't been attacked by other players
+	if (scalar(keys %{$monster->{missedFromPlayer}}) == 0
+	 && scalar(keys %{$monster->{dmgFromPlayer}})    == 0
+	 #&& scalar(keys %{$monster->{castOnByPlayer}})   == 0	#change to $allowed
+	&& $allowed
+
+	 # and it hasn't attacked any other player
+	 && scalar(keys %{$monster->{missedToPlayer}}) == 0
+	 && scalar(keys %{$monster->{dmgToPlayer}})    == 0
+	 && scalar(keys %{$monster->{castOnToPlayer}}) == 0
+	) {
+		# The monster might be getting lured by another player.
+		# So we check whether it's walking towards any other player, but only
+		# if we haven't already attacked the monster.
+		if ($monster->{dmgFromYou} || $monster->{missedFromYou}) {
+			return 1;
+		} else {
+			return !objectIsMovingTowardsPlayer($monster);
+		}
+	}
+
+	# The monster didn't attack you.
+	# Other players attacked it, or it attacked other players.
+	if ($monster->{dmgFromYou} || $monster->{missedFromYou}) {
+		# If you have already attacked the monster before, then consider it clean
+		return 1;
+	}
+	# If you haven't attacked the monster yet, it's unclean.
+
+	return 0;
+}
 
 ##
 # boolean createCharacter(int slot, String name, int [str,agi,vit,int,dex,luk] = 5)
@@ -2333,6 +2429,7 @@ sub pickupitems {
 }
 
 sub positionNearPlayer {
+	return 0 if ($config{'rabidDog'} || $config{'killSteal'});
 	my $r_hash = shift;
 	my $dist = shift;
 

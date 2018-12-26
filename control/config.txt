@@ -5,8 +5,8 @@
 
 master Awaken Ragnarok Online
 server 0
-username gassasin
-password qweasdzxc
+username makemyday
+password idolkita
 loginPinCode
 char 1
 
@@ -36,7 +36,7 @@ XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword reaswiya
+adminPassword beshaizi
 callSign
 commandPrefix ;
 callSignGM 0
@@ -53,7 +53,7 @@ whenInGame_requestCashPoints 0
 message_length_max 80
 
 ######## Main configuration ########
-
+killSteal 1
 alias_heal sp 28
 
 allowedMaps
@@ -437,64 +437,16 @@ pet_return 20
 # You can copy & paste any block multiple times. So if you want to
 # configure two attack skills, just duplicate the attackSkillSlot block.
 
-attackSkillSlot Soul Destroyer {
+attackSkillSlot Storm Gust {
 	lvl 10
-	dist 5
-	maxCastTime 0
-	minCastTime 0
-	hp
 	sp > 10
-	homunculus_hp
-	homunculus_sp
-	homunculus_dead
-	onAction
-	whenStatusActive
-	whenStatusInactive
-	whenFollowing
-	spirit
-	amuletType
-	aggressives
-	previousDamage
-	stopWhenHit 0
-	inLockOnly 0
-	notInTown 0
-	timeout 0
-	disabled 0
-	monsters
-	notMonsters
-	monstersCount
-	maxAttempts 0
-	maxUses 0
-	target_hp
-	target_whenStatusActive
-	target_whenStatusInactive
-	target_deltaHp
-	inInventory
-	isSelfSkill 0
-	equip_topHead
-	equip_midHead
-	equip_lowHead
-	equip_leftHand
-	equip_rightHand
-	equip_leftAccessory
-	equip_rightAccessory
-	equip_robe
-	equip_armor
-	equip_shoes
-	equip_arrow
-	manualAI 0
+	dist 8
 }
 
-attackComboSlot {
-	afterSkill
+attackComboSlot Lord of Vermilion {
+	afterSkill Storm Gust
 	waitBeforeUse
-	dist 1.5
-	isSelfSkill 1
-	target_hp
-	target_deltaHp
-	monsters
-	notMonsters
-	monstersCount
+	dist 8
 }
 
 doCommand {

@@ -41,7 +41,7 @@ automacro part4{
 	run-once 1
 	map Alyssandra
 	call {
-		do move 81 89
+		do move 85 95
 		do talknpc 83 95
 		do c @warp novice
 		do reload mac

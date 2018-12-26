@@ -5,8 +5,8 @@
 
 master Awaken Ragnarok Online
 server 0
-username makemyday
-password idolkita
+username gassasin
+password qweasdzxc
 loginPinCode
 char 1
 
@@ -100,8 +100,8 @@ attackEquip_arrow
 #You need the breakTime plugin: http://wiki.openkore.com/index.php?title=BreakTime
 
 autoBreakTime all {
-	startTime 11:30
-	stopTime 18:00
+	startTime 15:30
+	stopTime 09:00
 }
 
 autoConfChange {
@@ -442,16 +442,10 @@ pet_return 20
 # You can copy & paste any block multiple times. So if you want to
 # configure two attack skills, just duplicate the attackSkillSlot block.
 
-attackSkillSlot Storm Gust {
+attackSkillSlot Soul Destroyer {
 	lvl 10
 	sp > 10
-	dist 8
-}
-
-attackComboSlot Lord of Vermilion {
-	afterSkill Storm Gust
-	waitBeforeUse
-	dist 8
+	dist 9
 }
 
 doCommand {

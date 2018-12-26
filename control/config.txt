@@ -5,8 +5,8 @@
 
 master Awaken Ragnarok Online
 server 0
-username jonard
-password kiki
+username gassasin
+password qweasdzxc
 loginPinCode
 char 1
 
@@ -36,7 +36,7 @@ XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword yetwadro
+adminPassword reaswiya
 callSign
 commandPrefix ;
 callSignGM 0
@@ -437,9 +437,9 @@ pet_return 20
 # You can copy & paste any block multiple times. So if you want to
 # configure two attack skills, just duplicate the attackSkillSlot block.
 
-attackSkillSlot {
+attackSkillSlot Soul Destroyer {
 	lvl 10
-	dist 1.5
+	dist 5
 	maxCastTime 0
 	minCastTime 0
 	hp

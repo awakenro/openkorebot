@@ -5,8 +5,8 @@
 
 master Awaken Ragnarok Online
 server 0
-username makemyday
-password idolkita
+username joy33
+password fupo
 loginPinCode
 char 1
 
@@ -441,18 +441,6 @@ pet_return 20
 ######## Block options ########
 # You can copy & paste any block multiple times. So if you want to
 # configure two attack skills, just duplicate the attackSkillSlot block.
-
-attackSkillSlot Storm Gust {
-	lvl 10
-	sp > 10
-	dist 8
-}
-
-attackComboSlot Lord of Vermilion {
-	afterSkill Storm Gust
-	lvl 10
-	sp > 10
-	dist 8
 
 doCommand {
 	hp

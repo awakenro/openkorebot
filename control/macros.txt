@@ -55,3 +55,27 @@ automacro part5{
 		do reload mac
 	}
 }
+
+automacro part6{
+	exclusive 1
+	timeout 3600 
+	call {
+		do relog
+		do reload mac
+	}
+}
+
+automacro part7{
+	run-once 1
+	exclusive 1
+	sp < 5%
+	call {
+		do @go main
+		pause 2
+		do move 84 89
+		pause 1
+		do talknpc 83 95
+		pause 1
+		do reload mac
+	}
+}

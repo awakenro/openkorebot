@@ -56,15 +56,6 @@ automacro part5{
 	}
 }
 
-automacro part6{
-	exclusive 1
-	timeout 3600 
-	call {
-		do relog
-		do reload mac
-	}
-}
-
 automacro part7{
 	run-once 1
 	exclusive 1
@@ -76,6 +67,7 @@ automacro part7{
 		pause 1
 		do talknpc 83 95
 		pause 1
+		do relog
 		do reload mac
 	}
 }

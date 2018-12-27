@@ -56,11 +56,12 @@ automacro part5{
 	}
 }
 
-automacro part7{
+automacro part6{
 	run-once 1
 	exclusive 1
-	sp > 5%
+	sp < 5%
 	call {
+		pause 1
 		do @go main
 		pause 2
 		do move 84 89
@@ -69,5 +70,14 @@ automacro part7{
 		pause 1
 		do relog
 		do reload mac
+	}
+}
+
+automacro part7{
+	run-once 1
+	map novice
+	call {
+		pause 3600
+		do relog
 	}
 }

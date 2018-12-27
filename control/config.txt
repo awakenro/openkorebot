@@ -5,8 +5,8 @@
 
 master Awaken Ragnarok Online
 server 0
-username joy33
-password fupo
+username jonard
+password kiki
 loginPinCode
 char 1
 

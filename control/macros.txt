@@ -68,7 +68,7 @@ automacro part6{
 automacro part7{
 	run-once 1
 	exclusive 1
-	sp < 5%
+	sp > 5%
 	call {
 		do @go main
 		pause 2

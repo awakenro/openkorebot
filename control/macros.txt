@@ -72,12 +72,3 @@ automacro part6{
 		do reload mac
 	}
 }
-
-automacro part7{
-	run-once 1
-	map novice
-	call {
-		pause 3600
-		do relog
-	}
-}

@@ -5,7 +5,7 @@ automacro part1{
 	sp > 5%
 	call {
 		$player = @player ($.lastMatch1)
-		do sp 379 $player
+		do kill $player
 		do move 50 50
 		do reload mac
 	}
@@ -41,7 +41,7 @@ automacro part4{
 	run-once 1
 	map Alyssandra
 	call {
-		do move 84 91
+		do move 87 96
 		do talknpc 83 95
 		do c @warp novice
 		do reload mac
